@@ -1,0 +1,99 @@
+excellent-bifurcation (0.0.20071015-1.mga7) unstable; urgency=medium
+
+  * Converted Debian package to RPM for Mageia
+    - Imported files: changelog, copyright, *.desktop files
+    - Addapted / extended the .desktop file
+
+ -- Florent Monnier <monnier.florent@gmail.com>  Wed Oct 28 22:12:26 CET 2020
+
+excellent-bifurcation (0.0.20071015-8) unstable; urgency=medium
+
+  * Make build reproducible by sorting list of source files to ensure
+    deterministic linking order. Thanks to Reiner Herrmann! (Closes: #826427)
+  * Update to Standards version 3.9.8.
+    - Drop obsolete menu file and xpm icon.
+
+ -- Vincent Cheng <vcheng@debian.org>  Sun, 05 Jun 2016 19:19:18 -0700
+
+excellent-bifurcation (0.0.20071015-7) unstable; urgency=medium
+
+  * Build with -std=gnu89 to force gnu89 inline semantics, fixing FTBFS with
+    both clang and gcc 5. (Closes: #757406, #777846)
+  * Document configuration in man page. Thanks to Jacob for the patch!
+    (Closes: #775384)
+  * Update to Standards version 3.9.6, no changes required.
+
+ -- Vincent Cheng <vcheng@debian.org>  Sun, 28 Jun 2015 22:42:47 -0700
+
+excellent-bifurcation (0.0.20071015-6) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Evgeni Golov ]
+  * Correct Vcs-* URLs to point to anonscm.debian.org
+
+  [ Vincent Cheng ]
+  * Update debian/patches/fix_allegro_linker_flag.patch.
+  * Update my email address.
+  * Build-depend on liballegro4-dev instead of virtual liballegro4.2-dev.
+  * Add desktop menu entry file and icon (to both FDO and Debian menu files).
+    (Closes: #726220)
+  * Update to Standards version 3.9.5, no changes required.
+
+ -- Vincent Cheng <vcheng@debian.org>  Mon, 27 Jan 2014 22:47:49 -0800
+
+excellent-bifurcation (0.0.20071015-5) unstable; urgency=low
+
+  * Add debian/patches/fix_allegro_linker_flag.patch to fix FTBFS; thanks to
+    Andreas Rönnquist for the patch. (Closes: #676026)
+  * Add debian/patches/fix_hurd_ftbfs.patch to fix FTBFS on hurd.
+  * Add myself to Uploaders.
+  * Remove build dependency on dh-buildinfo.
+  * Bump Standards-Version to 3.9.3 (no changes required).
+
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Mon, 04 Jun 2012 16:54:32 -0700
+
+excellent-bifurcation (0.0.20071015-4) unstable; urgency=low
+
+  * Team upload.
+  * Modify debian/patches/link-with-libm.patch to fix FTBFS with ld
+    --as-needed. Thanks to Ilya Barygin for the bug report! (Closes: #631687)
+  * Bump Standards-Version to 3.9.2 (no changes required).
+  * Update debhelper compatiblity level from 5 to 8.
+  * Update debian/rules to dh 7 "rules.tiny" style.
+
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Mon, 25 Jul 2011 12:43:21 -0700
+
+excellent-bifurcation (0.0.20071015-3) unstable; urgency=low
+
+  * Team upload.
+  * Use source format 3.0 (quilt).
+  * debian/copyright: Refer to /usr/share/common-licenses/GPL-2.
+  * Link with -lm to fix FTBFS with binutils-gold. (Closes: #554275)
+    + new patch: link-with-libm.patch
+  * Bump Standards-Version to 3.9.1.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Mon, 14 Mar 2011 18:52:30 +0100
+
+excellent-bifurcation (0.0.20071015-2) unstable; urgency=low
+
+  * Save init.d according to XDG base directory specifications and not
+    in the current directory. Closes: #530630
+  * Build-depends on libxdg-basedir-dev and pkg-config
+  * Bumped Standards-Version to 3.8.2
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Mon, 27 Jul 2009 13:24:30 +0200
+
+excellent-bifurcation (0.0.20071015-1) unstable; urgency=low
+
+  [ Miriam Ruiz ]
+  * Initial release (Closes: #523659)
+
+  [ Eddy Petrișor ]
+  * add missing Vcs-Svn headers
+
+  [ Barry deFreese ]
+  * Add myself to uploaders.
+  * Add simple manpage.
+
+ -- Barry deFreese <bdefreese@debian.org>  Sat, 11 Apr 2009 11:40:36 -0400

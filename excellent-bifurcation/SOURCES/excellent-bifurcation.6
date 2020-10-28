@@ -1,0 +1,82 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH EXCELLENT-BIFURCATION 6 "January 2015"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+excellent-bifurcation \- an abstract two-sided vertical shooter
+.SH SYNOPSIS
+.B excellent-bifurcation
+.SH DESCRIPTION
+The aliens have attacked, and their ability to exist in
+either or both of their world and ours has given them an
+almost unsurpassable advantage.
+
+Take command of a special fighter craft capable of existing
+in both realities at once and drive them back!
+
+The form your fighter takes on the left has double fast-firing
+cannons and can charge to release up to eight seekers. It is ideal
+for destroying small and weak but numerous enemies. The right-hand
+form has a single powerful cannon which fires slowly but does far
+more damage, and is more suited to taking out larger enemies.
+It can charge up to release a wave which passes through things,
+damaging them as it goes (unlike the beam weapons, which only hit
+anything once no matter how thick it is). You can switch them between
+the worlds depending on what kind of firepower you need where.
+.SH KEYS
+.TP
+.B Left, Right, Up, Down
+move the fighter across the screen
+.TP
+.B Z
+fire the main weapon
+.TP
+.B X
+charges your weapons
+.TP
+.B C
+switches your two forms between the two worlds (screens)
+.TP
+.B A
+turns on or off the autofire mode (autofire is just like holding down Z)
+.TP
+.B Esc
+return to the main menu
+.PP
+Key controls can be modified inside the game options menu.
+.SH CONFIGURATION
+\fBexcellent-bifurcation\fP doesn't accept any command line arguments.
+Configuration is via the file \fB~/.config/excellent-bifurcation/init.txt\fP
+(or a different path if the environment variable \fBXDG_CONFIG_HOME\fP
+has been modified), which also records scores and configured key controls.
+
+The following configuration can only be done by editing \fBinit.txt\fP
+(under the heading \fB[Misc]\fP):
+.TP
+.B Windowed
+Use \fBWindowed = 0\fP for fullscreen, \fBWindowed = 1\fP to run in a
+window (default).
+.TP
+.B vsync
+Turning vsync on (\fBvsync = 1\fP) eliminates a graphic shearing effect which
+some people might find annoying, but can slow things down on older systems.
+Default is \fBvsync = 0\fP.
+.PP
+.SH AUTHOR
+excellent-bifurcation was written by Linley Henzell.
+
+This manual page was written by Barry deFreese <bdefreese@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

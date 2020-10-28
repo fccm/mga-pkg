@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Excellent Bifurcation
+Comment=Abstract vertical shooter with two sides to play on
+Comment[fr]=Jeu de tir à défilement vertical, avec deux côtés
+Comment[nl]=Verticaal scrollend, arcade schietspel
+Comment[id]=Tembak-tembakan arkade, vertikal
+GenericName=Shoot'em up shooter
+GenericName[fr]=Jeu de tir
+GenericName[nl]=Schietspel
+GenericName[id]=Tembak-tembakan
+TryExec=/usr/games/excellent-bifurcation
+Exec=/usr/games/excellent-bifurcation
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame;
+Icon=/usr/share/excellent-bifurcation/excellent-bifurcation.png
+StartupNotify=false
+MimeType=

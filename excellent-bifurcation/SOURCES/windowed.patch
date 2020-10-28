@@ -1,0 +1,16 @@
+# Copyright (C) 2007  Miriam Ruiz <little_miry@yahoo.es>
+# Distributed under the same license as the game. See debian/copyright.
+
+Index: excellent-bifurcation-0.0.20071015/src/main.c
+===================================================================
+--- excellent-bifurcation-0.0.20071015.orig/src/main.c	2007-10-26 23:01:59.000000000 +0200
++++ excellent-bifurcation-0.0.20071015/src/main.c	2007-10-26 23:02:09.000000000 +0200
+@@ -175,7 +175,7 @@
+    srand(randseed);
+ 
+ //   int windowed = GFX_AUTODETECT_FULLSCREEN;
+-int windowed2 = get_config_int("Misc", "Windowed", 0);
++int windowed2 = get_config_int("Misc", "Windowed", 1);
+ //   windowed2 = 0;//GFX_AUTODETECT_FULLSCREEN;
+ 
+ //set_config_int("Misc", "Windowed", 0);

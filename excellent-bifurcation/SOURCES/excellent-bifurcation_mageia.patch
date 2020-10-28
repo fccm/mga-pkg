@@ -1,0 +1,214 @@
+From: Florent Monnier <monnier.florent@gmail.com>
+Date: Wed Oct 28 22:16:21 CET 2020
+Description: update LDFLAGS, fix data-dir path, remove inline for xpart and ypart
+
+diff -Naur excellent-bifurcation-0.0.20071015/src/Makefile excellent-bifurcation-0.0.20071015.mga7/src/Makefile
+--- excellent-bifurcation-0.0.20071015/src/Makefile	2007-10-23 11:01:05.000000000 +0200
++++ excellent-bifurcation-0.0.20071015.mga7/src/Makefile	2020-10-28 01:25:25.575010782 +0100
+@@ -1,6 +1,6 @@
+ CC=gcc
+-CFLAGS=-Wall -O2
++CFLAGS=-Wall -O2 -DDATA_DIR='"/usr/share/games/excellent-bifurcation"'
+-LDFLAGS=-lalleg-4.2.2
++LDFLAGS=-lalleg -lm
+ SOURCES=$(shell find . -name "*.c")
+ OBJECTS=$(SOURCES:.c=.o)
+ EXECUTABLE=excellent-bifurcation
+diff -Naur excellent-bifurcation-0.0.20071015/src/display_init.c excellent-bifurcation-0.0.20071015.mga7/src/display_init.c
+--- excellent-bifurcation-0.0.20071015/src/display_init.c	2007-01-30 21:21:20.000000000 +0100
++++ excellent-bifurcation-0.0.20071015.mga7/src/display_init.c	2020-10-28 01:25:25.520010786 +0100
+@@ -169,7 +169,7 @@
+  set_clip_rect(display[1], 0, 0, 320, 480);
+ 
+ 
+- DATAFILE *datf = load_datafile("gfx//ebdata.dat");
++ DATAFILE *datf = load_datafile(DATA_DIR "/gfx/ebdata.dat");
+  if (datf == NULL)
+  {
+   set_gfx_mode(GFX_TEXT, 0, 0, 0, 0);
+@@ -1095,7 +1095,7 @@
+  destroy_bitmap(check_pattern);
+  destroy_bitmap(check_pattern2);
+ 
+- BITMAP *file_bitmap = load_up_bitmap("gfx//explodes.bmp");
++ BITMAP *file_bitmap = load_up_bitmap(DATA_DIR "/gfx/explodes.bmp");
+ 
+  fix_trans(file_bitmap);
+ 
+@@ -1517,7 +1517,7 @@
+ {
+ 
+ 
+- BITMAP *file_bitmap = load_up_bitmap("gfx//player.bmp");
++ BITMAP *file_bitmap = load_up_bitmap(DATA_DIR "/gfx/player.bmp");
+ 
+  BITMAP *temp_bitmap1 = new_bitmap(37, 30, "Prepare player_rles temp_bitmap1");
+ // BITMAP *temp_bitmap2 = new_bitmap(14, 14, "Prepare player_res temp_bitmap2");
+@@ -1757,7 +1757,7 @@
+ {
+ 
+ 
+- BITMAP *file_bitmap = load_up_bitmap("gfx//platform.bmp");
++ BITMAP *file_bitmap = load_up_bitmap(DATA_DIR "/gfx/platform.bmp");
+ 
+  fix_outline(file_bitmap);
+ 
+@@ -1810,7 +1810,7 @@
+ {
+ 
+ 
+- BITMAP *file_bitmap = load_up_bitmap("gfx//s_enemy.bmp");
++ BITMAP *file_bitmap = load_up_bitmap(DATA_DIR "/gfx/s_enemy.bmp");
+ 
+  fix_outline(file_bitmap);
+ 
+@@ -1884,7 +1884,7 @@
+ {
+ 
+ 
+- BITMAP *file_bitmap = load_up_bitmap("gfx//l_enemy.bmp");
++ BITMAP *file_bitmap = load_up_bitmap(DATA_DIR "/gfx/l_enemy.bmp");
+ 
+  fix_outline(file_bitmap);
+ 
+@@ -1998,7 +1998,7 @@
+ void prepare_little_rles(void)
+ {
+ 
+- BITMAP *file_bitmap = load_up_bitmap("gfx//little.bmp");
++ BITMAP *file_bitmap = load_up_bitmap(DATA_DIR "/gfx/little.bmp");
+ 
+  fix_trans(file_bitmap);
+ 
+@@ -2233,7 +2233,7 @@
+ {
+ 
+ 
+- BITMAP *file_bitmap = load_up_bitmap("gfx//elarge.bmp");
++ BITMAP *file_bitmap = load_up_bitmap(DATA_DIR "/gfx/elarge.bmp");
+ 
+ 
+  BITMAP *temp_bitmap1 = new_bitmap(100, 100, "Prepare enemy_rles temp_bitmap1");
+@@ -2388,7 +2388,7 @@
+ 
+  clear_to_color(underlay, COL_LOWER_BG1);
+ 
+- BITMAP *temp_bitmap = load_up_bitmap("gfx//underlay.bmp");
++ BITMAP *temp_bitmap = load_up_bitmap(DATA_DIR "/gfx/underlay.bmp");
+ 
+  blit(temp_bitmap, underlay, 0, 0, 0, 0, 320, 480);
+  blit(temp_bitmap, underlay, 0, 0, 0, 480, 320, 480);
+@@ -2401,7 +2401,7 @@
+ 
+  clear_to_color(underlay2, COL_LOWER_BG1);
+ 
+- temp_bitmap = load_up_bitmap("gfx//underlay2.bmp");
++ temp_bitmap = load_up_bitmap(DATA_DIR "/gfx/underlay2.bmp");
+ 
+  blit(temp_bitmap, underlay2, 0, 0, 0, 0, 320, 480);
+  blit(temp_bitmap, underlay2, 0, 0, 0, 480, 320, 480);
+@@ -2484,7 +2484,7 @@
+ 
+ /* palet [7].r = 1;
+  set_palette(palet);*/
+- BITMAP *file_bitmap = load_up_bitmap("gfx//small.bmp");
++ BITMAP *file_bitmap = load_up_bitmap(DATA_DIR "/gfx/small.bmp");
+ /* palet [7].r = 0x8d;
+  set_palette(palet);*/
+ 
+diff -Naur excellent-bifurcation-0.0.20071015/src/menu.c excellent-bifurcation-0.0.20071015.mga7/src/menu.c
+--- excellent-bifurcation-0.0.20071015/src/menu.c	2007-10-16 00:25:26.000000000 +0200
++++ excellent-bifurcation-0.0.20071015.mga7/src/menu.c	2020-10-28 01:25:25.458010792 +0100
+@@ -371,7 +371,7 @@
+ void loading_screen(void)
+ {
+ 
+-/* splash_bitmap = load_bitmap("gfx//splash.bmp", splash_palette);
++/* splash_bitmap = load_bitmap(DATA_DIR "/gfx/splash.bmp", splash_palette);
+ 
+  if (splash_bitmap == NULL)
+  {
+@@ -384,7 +384,7 @@
+  vsync();
+  clear_bitmap(screen);
+ 
+- BITMAP *wait_bitmap = load_bitmap("gfx//wait.bmp", splash_palette);
++ BITMAP *wait_bitmap = load_bitmap(DATA_DIR "/gfx/wait.bmp", splash_palette);
+ 
+  if (wait_bitmap == NULL)
+  {
+@@ -417,7 +417,7 @@
+ void loading_screen_wait(void)
+ {
+ /*
+- BITMAP *press_bitmap = load_bitmap("gfx//press.bmp", splash_palette);
++ BITMAP *press_bitmap = load_bitmap(DATA_DIR "/gfx/press.bmp", splash_palette);
+ 
+  if (press_bitmap == NULL)
+  {
+diff -Naur excellent-bifurcation-0.0.20071015/src/sound.c excellent-bifurcation-0.0.20071015.mga7/src/sound.c
+--- excellent-bifurcation-0.0.20071015/src/sound.c	2007-01-31 23:39:22.000000000 +0100
++++ excellent-bifurcation-0.0.20071015.mga7/src/sound.c	2020-10-28 01:25:25.458010792 +0100
+@@ -1072,7 +1072,7 @@
+ 
+  char sfile_name [50];
+ 
+- strcpy(sfile_name, ".//wavs//");
++ strcpy(sfile_name, DATA_DIR "/wavs/");
+  strcat(sfile_name, sfile);
+  strcat(sfile_name, ".wav");
+ 
+@@ -1091,7 +1091,7 @@
+ 
+  char sfile_name [50];
+ 
+- strcpy(sfile_name, ".//wavs//ambi//");
++ strcpy(sfile_name, DATA_DIR "/wavs/ambi/");
+  strcat(sfile_name, sfile);
+  strcat(sfile_name, ".wav");
+ 
+diff -Naur excellent-bifurcation-0.0.20071015/src/stuff.c excellent-bifurcation-0.0.20071015.mga7/src/stuff.c
+--- excellent-bifurcation-0.0.20071015/src/stuff.c	2007-01-07 15:23:14.000000000 +0100
++++ excellent-bifurcation-0.0.20071015.mga7/src/stuff.c	2020-10-28 01:25:25.483010789 +0100
+@@ -53,7 +53,7 @@
+ float cos_table [ANGLE_1];
+ float sin_table [ANGLE_1];
+ 
+-inline int xpart(int angle, int length);
++//inline int xpart(int angle, int length);
+ 
+ void init_trig(void)
+ {
+@@ -68,13 +68,13 @@
+ 
+ }
+ 
+-inline int xpart(int angle, int length)
++int xpart(int angle, int length)
+ {
+ // return (lcos(angle) * length);// / ANGLE_1;
+  return (cos_table [angle & 1023] * length);// / ANGLE_1;
+ }
+ 
+-inline int ypart(int angle, int length)
++int ypart(int angle, int length)
+ {
+  return (sin_table [angle & 1023] * length);// / ANGLE_1;
+ }
+diff -Naur excellent-bifurcation-0.0.20071015/src/stuff.h excellent-bifurcation-0.0.20071015.mga7/src/stuff.h
+--- excellent-bifurcation-0.0.20071015/src/stuff.h	2006-06-10 19:17:30.000000000 +0200
++++ excellent-bifurcation-0.0.20071015.mga7/src/stuff.h	2020-10-28 01:25:25.575010782 +0100
+@@ -7,8 +7,11 @@
+ int crandom(int number);
+ int turn_towards_angle(int angle, int tangle, int turning);
+ int turn_towards_xy(int x1, int y1, int x2, int y2, int angle, int turning);
+-inline int xpart(int angle, int length);
+-inline int ypart(int angle, int length);
++//inline int xpart(int angle, int length);
++//inline int ypart(int angle, int length);
++int xpart(int angle, int length);
++int ypart(int angle, int length);
++
+ int pulsate(int speed, int amount, int county);
+ int angle_difference(int a1, int a2);
+ 

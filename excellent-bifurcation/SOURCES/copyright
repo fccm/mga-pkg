@@ -1,0 +1,179 @@
+This package was debianized by Miriam Ruiz <little_miry@yahoo.es> on
+Tue, 23 Oct 2007 08:52:00 +0000.
+
+Upstream Author:
+
+    Linley Henzell <l_henzell@yahoo.com.au>
+
+Copyright:
+
+    Copyright (C) 2006-2007  Linley Henzell
+
+License:
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of version 2 of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-2'.
+
+The Debian packaging is Copyright (C) 2007, Miriam Ruiz <little_miry@yahoo.es> and
+is licensed under the GPL, see above.
+
+
+
+Mail exchange with the author of the program regarding the license:
+
+
+from: Miriam Ruiz <little.miry@gmail.com>
+to: l_henzell@yahoo.com.au
+date: 10-oct-2007 16:12
+topic: Question about the license of your games
+
+Hi! :)
+
+I'm interested in packaging your games "Garden of Coloured Lights" and
+"Excellent Bifurcation" for Debian and Ubuntu, two of the major Linux
+distributions. For "Excellent Bifurcation" I don't have the source
+code, but I've read that you want to release it. For "Garden of
+Coloured Lights", even though I have the source code, the license
+itself is quite fuzzy. Would it be possible that you released a
+version under the GPL or some other free software license?
+
+Thanks in advance,
+Miry
+
+
+from: Linley Henzell <l_henzell@yahoo.com.au>
+to: Miriam Ruiz <little.miry@gmail.com>
+date: 14-oct-2007 8:08
+topic: Re: Question about the license of your games
+
+Hi there!
+
+Thanks for offering to package my games! I appreciate
+it.
+
+I'd be more than happy to release EB under the GPL. I
+don't have a home internet connection at the moment,
+but the next time I'm at the Internet cafe I'll email
+you a copy of the source. The only change I'll need to
+make is removing the sponsors' banners at the start,
+because of course I can't use them in a GPL program.
+
+Since the competition I entered GoCL in is still
+going, I'd prefer to wait a bit before releasing a
+version without the sponsors' banners (doing so isn't
+against the rules but it would be nice not to). I'd be
+happy for the game to be packaged under its current
+fuzzy licence, but if that's not good enough (and I
+know that Linux people are very careful about getting
+licences right, so I imagine it probably isn't) I'll
+email you GPL source when the competition is over if
+that's okay.
+
+Thanks!
+Linley
+
+
+from: Miriam Ruiz <little.miry@gmail.com>
+to: Linley Henzell <l_henzell@yahoo.com.au>
+date: 15-oct-2007 0:48
+topic: Re: Question about the license of your games
+
+Thanks a lot for your answer, of course I can wait until you consider
+it's the best moment to release it. It would certainly be the best to
+have it under the GPL or any other free license, otherwise it'll have
+to go to non-free and, well, in general it would be much worse.
+
+Good luck in the competition, I'm really looking forward to packaging
+it after it's finished. Thanks a lot!!
+
+Greetings,
+Miry
+
+
+from: Linley Henzell <l_henzell@yahoo.com.au>
+to: Miriam Ruiz <little.miry@gmail.com>
+date: 16-oct-2007 9:55
+topic: Re: Question about the license of your games
+
+Cool. I'll send the Garden source through in a few
+weeks.
+
+Here's the source to Excellent Bifurcation. I've
+modified it so it no longer needs the banners (which
+are in splash.bmp in the gfx directory - splash.bmp
+can be deleted). It's just source, so you'll need all
+of the other files from the windows binary zip. I
+haven't put a licence.txt file in there but I'm sure
+you have a copy of the GPL laying around :) GPL
+version 2 with the 'or later version' wording would be
+best, I think.
+
+The source is not exactly a model of elegance, but
+hopefully it won't need any changes to be able to
+compile on Linux.
+
+Let me know if you have any problems. And thanks again
+for doing this - it's good to see my games on as many
+platforms as possible!
+
+Bye,
+Linley
+
+
+from: Miriam Ruiz <little.miry@gmail.com>
+to: Linley Henzell <l_henzell@yahoo.com.au>
+date: 22-oct-2007 19:57
+topic: Re: Question about the license of your games
+
+Hi! :)
+
+I've made a temporary initial release of the tarball I plan to use for
+building the package (
+http://users.alioth.debian.org/~baby-guest/tmp/excellent-bifurcation-0.0.20071015.tgz
+) . Please have a look at it and tell me if it's correct.
+
+I assume from your previous mail that both the source code and the
+game data (graphics and sound) have been made by you and released
+under the GPL 2 or later license. Please correct me if it's not like
+that or if someone else has the copyright over the sounds or graphics.
+
+Greetings and lots of thanks!!
+Miry
+
+
+from: Linley Henzell <l_henzell@yahoo.com.au>
+to: Miriam Ruiz <little.miry@gmail.com>
+date: 23-oct-2007 10:13
+topic: Re: Question about the license of your games
+
+Hi there,
+
+Thanks for the archive. I'm at the library at the
+moment and I probably won't have a chance to look at
+it and get back to you for a few days. You're entirely
+welcome to release it as it is, though :)
+
+Yes, I have the copyright to all of the code, sounds
+and graphics (and everything else relevant) and I'm
+happy for it to be released under the GPL v2 or later.
+
+The competition is supposed to finish judging by the
+end of the week, so I'll have the GPL version of
+Garden of Coloured Lights to you soon.
+
+Bye!
+Linley
