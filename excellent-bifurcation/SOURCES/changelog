@@ -1,9 +1,9 @@
 excellent-bifurcation (0.0.20071015-1.mga7) unstable; urgency=medium
 
   * Converted Debian package to RPM for Mageia
-    - Imported files: changelog, copyright, *.desktop files
+    - Imported files: changelog, copyright, man-page, *.desktop files
     - Adapted / extended the .desktop file
-    - Minor changes in the icon file
+    - Minor changes to the icon file
 
  -- Florent Monnier <monnier.florent@gmail.com>  Wed Oct 28 22:12:26 CET 2020
 
